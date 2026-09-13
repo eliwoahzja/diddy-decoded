@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Call of Diddy</string>
+    <string name="app_name">Call of Duty</string>
     <string name="codm_authority_first_content">"Storage permissions allow Call of Duty: Mobile to add additional maps, operators and weapons. Some modes are only available after the download.
 Please tap OK to proceed and accept the permissions, or tap EXIT to close the game."</string>
     <string name="codm_authority_privacy_file_content">STORAGE permissions are needed to download game updates.</string>
