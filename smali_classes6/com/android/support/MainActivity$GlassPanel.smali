@@ -206,7 +206,7 @@
 # Liquid-glass stroke: top-lit gradient rim + inner hairline, rounded corners.
 # Runs AFTER super/native onDraw so the stroke sits on top of the glass face.
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
-    .locals 10
+    .locals 11
 
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
@@ -232,19 +232,11 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    const/high16 v2, 0x41200000    # 10.0f glow radius
-
-    const/4 v3, 0x0                # dx 0
-
-    const/high16 v5, 0x40800000    # dy 4.0f
-
-    const v7, 0x33000000           # shadow color 20% black
-
-    invoke-virtual {v1, v2, v3, v5, v7}, Landroid/graphics/Paint;->setShadowLayer(FFI)V
-
     new-instance v4, Landroid/graphics/RectF;
 
     invoke-direct {v4}, Landroid/graphics/RectF;-><init>()V
+
+    move-object v10, v4                # keep rect ref; v4 gets reused for coords
 
     invoke-virtual {p0}, Lcom/android/support/MainActivity$GlassPanel;->getWidth()I
 
@@ -266,33 +258,33 @@
 
     invoke-virtual {v4, v3, v3, v5, v7}, Landroid/graphics/RectF;->set(FFFF)V
 
-    const/4 v5, 0x3
+    const/4 v8, 0x3
 
-    new-array v5, v5, [I
+    new-array v7, v8, [I
 
-    fill-array-data v5, :array_stroke_colors
+    fill-array-data v7, :array_stroke_colors
 
-    new-instance v6, Landroid/graphics/LinearGradient;
-
-    iget v0, v4, Landroid/graphics/RectF;->left:F
-
-    iget v2, v4, Landroid/graphics/RectF;->top:F
+    new-instance v2, Landroid/graphics/LinearGradient;
 
     iget v3, v4, Landroid/graphics/RectF;->left:F
 
-    iget v7, v4, Landroid/graphics/RectF;->bottom:F
+    iget v5, v4, Landroid/graphics/RectF;->left:F
+
+    iget v6, v4, Landroid/graphics/RectF;->bottom:F
+
+    iget v4, v4, Landroid/graphics/RectF;->top:F
 
     const/4 v8, 0x0                # positions null
 
     sget-object v9, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
 
-    invoke-direct {v6, v0, v2, v3, v7, v5, v8, v9}, Landroid/graphics/LinearGradient;-><init>(FFFF[I[FLandroid/graphics/Shader$TileMode;)V
+    invoke-direct/range {v2 .. v9}, Landroid/graphics/LinearGradient;-><init>(FFFF[I[FLandroid/graphics/Shader$TileMode;)V
 
-    invoke-virtual {v1, v6}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)V
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)V
 
     const/high16 v2, 0x41e00000    # 28.0f corner radius
 
-    invoke-virtual {p1, v4, v2, v2, v1}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v10, v2, v2, v1}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
     const/high16 v2, 0x3fc00000    # 1.5f hairline width
 
@@ -302,27 +294,17 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)V
 
-    const/4 v2, 0x0                # no shadow on hairline
-
-    const/4 v3, 0x0
-
-    const/4 v5, 0x0
-
-    const/4 v7, 0x0
-
-    invoke-virtual {v1, v2, v3, v5, v7}, Landroid/graphics/Paint;->setShadowLayer(FFI)V
-
     const v2, 0x66ffffff           # 40% white sheen
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
     const/high16 v3, 0x40400000    # +3.0f inner inset
 
-    invoke-virtual {v4, v3, v3, v3, v3}, Landroid/graphics/RectF;->inset(FFFF)V
+    invoke-virtual {v10, v3, v3, v3, v3}, Landroid/graphics/RectF;->inset(FFFF)V
 
     const/high16 v2, 0x41a00000    # 20.0f inner radius
 
-    invoke-virtual {p1, v4, v2, v2, v1}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v10, v2, v2, v1}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
     return-void
 
