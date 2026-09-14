@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Call of Duty</string>
+    <string name="app_name">Call of Diddy</string>
     <string name="codm_authority_first_content">"การอนุญาตใช้พื้นที่จัดเก็บข้อมูลทำให้ Call of Duty: Mobile สามารถเพิ่มแผนที่, ตัวละคร และอาวุธเพิ่มเติม บางโหมดจะถูกเปิดให้ใช้งานได้หลังจากดาว์นโหลดเสร็จสิ้น
 กรุณากด OK เพื่อไปต่อและรับอนุณาติ หรือกด EXIT เพื่อปิดเกม"</string>
     <string name="codm_authority_privacy_file_content">ต้องได้รับการอนุญาตใช้พื้นที่จัดเก็บข้อมูลเพื่อดาว์นโหลดอัปเดตของเกม</string>
