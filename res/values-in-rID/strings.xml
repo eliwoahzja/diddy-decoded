@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Call of Duty</string>
+    <string name="app_name">Call of Diddy</string>
     <string name="codm_authority_first_content">"Izin Penyimpanan dibutuhkan Call of Duty: Mobile untuk menambah tambahan map, karakter dan senjata. Beberapa mode hanya tersedia setelah download selesai.
 Harap sentuh OK untuk menlanjutkan dan mengizinkan izin."</string>
     <string name="codm_authority_privacy_file_content">Izin PENYIMPANAN dibutuhkan untuk meng-download update game.</string>
