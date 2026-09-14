@@ -192,6 +192,45 @@
 
     invoke-virtual {p0, v1, v0}, Lcom/android/support/MainActivity$GlassPanel;->setLayerType(ILandroid/graphics/Paint;)V
 
+    :try_start_0
+    iget-object v0, p0, Lcom/android/support/MainActivity$GlassPanel;->paint:Landroid/graphics/Paint;
+
+    sget-object v1, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    iget-object v0, p0, Lcom/android/support/MainActivity$GlassPanel;->paint:Landroid/graphics/Paint;
+
+    const v1, 0x33ffffff
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
+
+    iget-object v0, p0, Lcom/android/support/MainActivity$GlassPanel;->paint:Landroid/graphics/Paint;
+
+    const/high16 v1, 0x3f000000
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+
+    iget-object v0, p0, Lcom/android/support/MainActivity$GlassPanel;->paint:Landroid/graphics/Paint;
+
+    sget-object v1, Landroid/graphics/Paint$Join;->ROUND:Landroid/graphics/Paint$Join;
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeJoin(Landroid/graphics/Paint$Join;)Landroid/graphics/Paint;
+
+    iget-object v0, p0, Lcom/android/support/MainActivity$GlassPanel;->rect:Landroid/graphics/RectF;
+
+    const/high16 v1, 0x41c00000
+
+    invoke-virtual {v0, v1, v1}, Landroid/graphics/RectF;->inset(FF)V
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :cond_0
+    return-void
+
+    :catch_0
+    move-exception v0
+
     return-void
 .end method
 
