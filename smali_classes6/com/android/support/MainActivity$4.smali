@@ -171,7 +171,7 @@
 .end method
 
 .method constructor <init>(Lcom/android/support/MainActivity;Landroid/widget/EditText;Lcom/android/support/MainActivity$LiquidButton;)V
-    .locals 0
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -185,6 +185,33 @@
     iput-object p1, p0, Lcom/android/support/MainActivity$4;->this$0:Lcom/android/support/MainActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    :try_start_0
+    iget-object v0, p1, Lcom/android/support/MainActivity;->prefs:Landroid/content/SharedPreferences;
+
+    const-string v1, "mod_key_saved"
+
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    if-lez v1, :cond_0
+
+    invoke-virtual {p2, v0}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :cond_0
+    return-void
+
+    :catch_0
+    move-exception v0
 
     return-void
 .end method
