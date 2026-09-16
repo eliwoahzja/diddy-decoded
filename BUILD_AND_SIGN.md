@@ -25,6 +25,61 @@ If the base does not declare `requiredSplitTypes`, an installer cannot attach th
 ABI split to it. The process then starts with no engine and dies in milliseconds
 with a blank screen and no UI.
 
+## 1b. aapt2 forces `isSplitRequired="true"` — restore the original binary manifest after building
+
+The original base APK declares the splits *without* `isSplitRequired`:
+
+```
+requiredSplitTypes="base__abi"   splitTypes=""   (no isSplitRequired)
+```
+
+Modern aapt2 refuses that combination:
+
+```
+error: attribute 'requiredSplitTypes' used in <manifest> but 'android:isSplitRequired' is not 'true'.
+```
+
+and will not let you set it to `false` either. So **every rebuild through aapt2 carries
+`isSplitRequired="true"`, which the original does not.** That flag tells Android the APK
+is unusable without its split set — it is a real behavioural difference, not cosmetic.
+
+Two other round-trip differences show up in the same diff:
+
+* `android:scheme="@string/garena_fb_login_protocol_scheme"` (id `0x7f0f006d`) is
+  re-emitted as the literal `"fb341893326515823"`.
+* Source `line=` numbers in the binary XML differ (harmless).
+
+**Fix: after building, drop the original binary manifest back into the APK** so the
+manifest is never re-encoded. It stays valid because every id it references is pinned in
+`res/values/public.xml`, so the ids resolve against the rebuilt `resources.arsc`:
+
+```bash
+python3 - <<'EOF'
+import zipfile
+orig = open('original/AndroidManifest.xml','rb').read()   # binary manifest from the original APK
+zin  = zipfile.ZipFile('base_new.apk')
+with zipfile.ZipFile('base_patched.apk','w') as zout:
+    for i in zin.infolist():
+        data = orig if i.filename == 'AndroidManifest.xml' else zin.read(i.filename)
+        zi = zipfile.ZipInfo(i.filename, date_time=i.date_time)
+        zi.compress_type = i.compress_type
+        zout.writestr(zi, data)
+EOF
+
+# then zipalign + sign as in section 3 (order matters: swap, align, sign)
+```
+
+Verify it took:
+
+```bash
+aapt2 dump xmltree --file AndroidManifest.xml base_patched.apk | grep -i isSplitRequired
+diff <(aapt2 dump xmltree --file AndroidManifest.xml original_wrapped.apk) \
+     <(aapt2 dump xmltree --file AndroidManifest.xml base_patched.apk)   # want: no output
+```
+
+To feed a bare binary manifest to `aapt2`, wrap it in a one-entry zip named
+`AndroidManifest.xml` first.
+
 ## 2. Sign with the original certificate
 
 The APK this repo was decoded from is signed with the AOSP **testkey**
