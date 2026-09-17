@@ -492,16 +492,40 @@
 .method private native fileContains(Ljava/io/File;Ljava/lang/String;)Ljava/lang/Boolean;
 .end method
 
-.method private native hasDumpTrace()Z
+.method private hasDumpTrace()Z
+    .locals 1
+
+    # environment check neutralized
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
-.method private native hasFridaTrace()Z
+.method private hasFridaTrace()Z
+    .locals 1
+
+    # environment check neutralized
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
-.method private native hasHookTrace()Z
+.method private hasHookTrace()Z
+    .locals 1
+
+    # environment check neutralized
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
-.method private native hasTunnelInterface()Z
+.method private hasTunnelInterface()Z
+    .locals 1
+
+    # VPN/tunnel check neutralized: always return false so VPN users are not blocked
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
 .method private static native hex([B)Ljava/lang/String;
