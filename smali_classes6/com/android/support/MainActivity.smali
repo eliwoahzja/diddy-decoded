@@ -492,31 +492,13 @@
 .method private native fileContains(Ljava/io/File;Ljava/lang/String;)Ljava/lang/Boolean;
 .end method
 
-.method private hasDumpTrace()Z
-    .locals 1
-
-    # environment check neutralized
-    const/4 v0, 0x0
-
-    return v0
+.method private native hasDumpTrace()Z
 .end method
 
-.method private hasFridaTrace()Z
-    .locals 1
-
-    # environment check neutralized
-    const/4 v0, 0x0
-
-    return v0
+.method private native hasFridaTrace()Z
 .end method
 
-.method private hasHookTrace()Z
-    .locals 1
-
-    # environment check neutralized
-    const/4 v0, 0x0
-
-    return v0
+.method private native hasHookTrace()Z
 .end method
 
 .method private hasTunnelInterface()Z
