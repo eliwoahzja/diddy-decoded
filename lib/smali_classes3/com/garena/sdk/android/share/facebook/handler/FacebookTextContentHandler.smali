@@ -1,0 +1,277 @@
+.class public final Lcom/garena/sdk/android/share/facebook/handler/FacebookTextContentHandler;
+.super Lcom/garena/sdk/android/share/facebook/handler/FacebookShareContentHandler;
+.source "FacebookTextContentHandler.kt"
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lcom/garena/sdk/android/share/facebook/handler/FacebookShareContentHandler<",
+        "Lcom/garena/sdk/android/share/model/ShareTextContent;",
+        ">;"
+    }
+.end annotation
+
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nFacebookTextContentHandler.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FacebookTextContentHandler.kt\ncom/garena/sdk/android/share/facebook/handler/FacebookTextContentHandler\n+ 2 ShareTextContent.kt\ncom/garena/sdk/android/share/model/ShareTextContentKt\n+ 3 CallbackExts.kt\ncom/garena/sdk/android/exts/CallbackExtsKt\n+ 4 MSDKErrorExts.kt\ncom/garena/sdk/android/exts/MSDKErrorExtsKt\n*L\n1#1,59:1\n93#2:60\n32#3,5:61\n37#3:74\n32#3,5:75\n37#3:88\n51#4,8:66\n51#4,8:80\n*S KotlinDebug\n*F\n+ 1 FacebookTextContentHandler.kt\ncom/garena/sdk/android/share/facebook/handler/FacebookTextContentHandler\n*L\n41#1:60\n42#1:61,5\n42#1:74\n47#1:75,5\n47#1:88\n42#1:66,8\n47#1:80,8\n*E\n"
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000.\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\u0008\u0002\u0008\u0001\u0018\u00002\u0008\u0012\u0004\u0012\u00020\u00020\u0001B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u00a2\u0006\u0004\u0008\u0007\u0010\u0008J\u0010\u0010\u000c\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u0002H\u0014R\u001c\u0010\t\u001a\u0010\u0012\u000c\u0012\n\u0012\u0002\u0008\u0003\u0012\u0002\u0008\u00030\u000b0\nX\u0082\u0004\u00a2\u0006\u0002\n\u0000\u00a8\u0006\u000f"
+    }
+    d2 = {
+        "Lcom/garena/sdk/android/share/facebook/handler/FacebookTextContentHandler;",
+        "Lcom/garena/sdk/android/share/facebook/handler/FacebookShareContentHandler;",
+        "Lcom/garena/sdk/android/share/model/ShareTextContent;",
+        "activity",
+        "Landroid/app/Activity;",
+        "activityResultCaller",
+        "Landroidx/activity/result/ActivityResultCaller;",
+        "<init>",
+        "(Landroid/app/Activity;Landroidx/activity/result/ActivityResultCaller;)V",
+        "shareLauncher",
+        "Landroidx/activity/result/ActivityResultLauncher;",
+        "Lcom/facebook/share/model/ShareContent;",
+        "onLoginSuccess",
+        "",
+        "content",
+        "share-facebook_release"
+    }
+    k = 0x1
+    mv = {
+        0x2,
+        0x0,
+        0x0
+    }
+    xi = 0x30
+.end annotation
+
+
+# instance fields
+.field private final shareLauncher:Landroidx/activity/result/ActivityResultLauncher;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroidx/activity/result/ActivityResultLauncher<",
+            "Lcom/facebook/share/model/ShareContent<",
+            "**>;>;"
+        }
+    .end annotation
+.end field
+
+
+# direct methods
+.method public constructor <init>(Landroid/app/Activity;Landroidx/activity/result/ActivityResultCaller;)V
+    .locals 1
+
+    const-string v0, "activity"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "activityResultCaller"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 35
+    invoke-direct {p0, p1, p2}, Lcom/garena/sdk/android/share/facebook/handler/FacebookShareContentHandler;-><init>(Landroid/app/Activity;Landroidx/activity/result/ActivityResultCaller;)V
+
+    .line 37
+    invoke-virtual {p0}, Lcom/garena/sdk/android/share/facebook/handler/FacebookTextContentHandler;->createShareLauncher()Landroidx/activity/result/ActivityResultLauncher;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/garena/sdk/android/share/facebook/handler/FacebookTextContentHandler;->shareLauncher:Landroidx/activity/result/ActivityResultLauncher;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public bridge synthetic onLoginSuccess(Lcom/garena/sdk/android/share/model/ShareContent;)V
+    .locals 0
+
+    .line 31
+    check-cast p1, Lcom/garena/sdk/android/share/model/ShareTextContent;
+
+    invoke-virtual {p0, p1}, Lcom/garena/sdk/android/share/facebook/handler/FacebookTextContentHandler;->onLoginSuccess(Lcom/garena/sdk/android/share/model/ShareTextContent;)V
+
+    return-void
+.end method
+
+.method protected onLoginSuccess(Lcom/garena/sdk/android/share/model/ShareTextContent;)V
+    .locals 5
+
+    const-string v0, "content"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 40
+    invoke-virtual {p0}, Lcom/garena/sdk/android/share/facebook/handler/FacebookTextContentHandler;->getCallback()Lcom/garena/sdk/android/Callback;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    .line 60
+    :cond_0
+    invoke-virtual {p1}, Lcom/garena/sdk/android/share/model/ShareTextContent;->getContent()Ljava/lang/String;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/CharSequence;
+
+    invoke-interface {v1}, Ljava/lang/CharSequence;->length()I
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    invoke-virtual {p1}, Lcom/garena/sdk/android/share/model/ShareTextContent;->getLink()Ljava/lang/String;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/CharSequence;
+
+    invoke-interface {v1}, Ljava/lang/CharSequence;->length()I
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    invoke-virtual {p1}, Lcom/garena/sdk/android/share/model/ShareTextContent;->getHashtags()[Ljava/lang/String;
+
+    move-result-object v1
+
+    array-length v1, v1
+
+    if-nez v1, :cond_1
+
+    .line 42
+    sget-object p1, Lcom/garena/sdk/android/model/CommonError;->INVALID_PARAMETERS:Lcom/garena/sdk/android/model/MSDKError;
+
+    .line 66
+    invoke-static {p1, v2}, Lcom/garena/sdk/android/exts/MSDKErrorExtsKt;->withCauseMessage(Lcom/garena/sdk/android/model/MSDKError;Ljava/lang/String;)Lcom/garena/sdk/android/model/MSDKError;
+
+    move-result-object p1
+
+    .line 73
+    new-instance v1, Lcom/garena/sdk/android/Result$Failure;
+
+    invoke-direct {v1, p1}, Lcom/garena/sdk/android/Result$Failure;-><init>(Lcom/garena/sdk/android/model/MSDKError;)V
+
+    .line 66
+    check-cast v1, Lcom/garena/sdk/android/Result;
+
+    .line 65
+    invoke-interface {v0, v1}, Lcom/garena/sdk/android/Callback;->onResult(Lcom/garena/sdk/android/Result;)V
+
+    return-void
+
+    .line 46
+    :cond_1
+    sget-object v1, Lcom/facebook/share/widget/ShareDialog;->Companion:Lcom/facebook/share/widget/ShareDialog$Companion;
+
+    const-class v3, Lcom/facebook/share/model/ShareLinkContent;
+
+    invoke-virtual {v1, v3}, Lcom/facebook/share/widget/ShareDialog$Companion;->canShow(Ljava/lang/Class;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    .line 47
+    sget-object p1, Lcom/garena/sdk/android/model/CommonError;->UNSUPPORTED_OPERATION:Lcom/garena/sdk/android/model/MSDKError;
+
+    .line 80
+    invoke-static {p1, v2}, Lcom/garena/sdk/android/exts/MSDKErrorExtsKt;->withCauseMessage(Lcom/garena/sdk/android/model/MSDKError;Ljava/lang/String;)Lcom/garena/sdk/android/model/MSDKError;
+
+    move-result-object p1
+
+    .line 87
+    new-instance v1, Lcom/garena/sdk/android/Result$Failure;
+
+    invoke-direct {v1, p1}, Lcom/garena/sdk/android/Result$Failure;-><init>(Lcom/garena/sdk/android/model/MSDKError;)V
+
+    .line 80
+    check-cast v1, Lcom/garena/sdk/android/Result;
+
+    .line 79
+    invoke-interface {v0, v1}, Lcom/garena/sdk/android/Callback;->onResult(Lcom/garena/sdk/android/Result;)V
+
+    return-void
+
+    .line 51
+    :cond_2
+    new-instance v0, Lcom/facebook/share/model/ShareLinkContent$Builder;
+
+    invoke-direct {v0}, Lcom/facebook/share/model/ShareLinkContent$Builder;-><init>()V
+
+    .line 52
+    invoke-virtual {p1}, Lcom/garena/sdk/android/share/model/ShareTextContent;->getLink()Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x1
+
+    invoke-static {v1, v3, v4, v2}, Lcom/garena/sdk/android/exts/StringExtsKt;->withUrlScheme$default(Ljava/lang/String;ZILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/facebook/share/model/ShareLinkContent$Builder;->setContentUrl(Landroid/net/Uri;)Lcom/facebook/share/model/ShareContent$Builder;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/facebook/share/model/ShareLinkContent$Builder;
+
+    .line 53
+    invoke-virtual {p1}, Lcom/garena/sdk/android/share/model/ShareTextContent;->getContent()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/facebook/share/model/ShareLinkContent$Builder;->setQuote(Ljava/lang/String;)Lcom/facebook/share/model/ShareLinkContent$Builder;
+
+    move-result-object v0
+
+    .line 54
+    invoke-virtual {p1}, Lcom/garena/sdk/android/share/model/ShareTextContent;->getHashtags()[Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lkotlin/collections/ArraysKt;->firstOrNull([Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/String;
+
+    invoke-virtual {p0, p1}, Lcom/garena/sdk/android/share/facebook/handler/FacebookTextContentHandler;->buildHashtag(Ljava/lang/String;)Lcom/facebook/share/model/ShareHashtag;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Lcom/facebook/share/model/ShareLinkContent$Builder;->setShareHashtag(Lcom/facebook/share/model/ShareHashtag;)Lcom/facebook/share/model/ShareContent$Builder;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/facebook/share/model/ShareLinkContent$Builder;
+
+    .line 55
+    invoke-virtual {p1}, Lcom/facebook/share/model/ShareLinkContent$Builder;->build()Lcom/facebook/share/model/ShareLinkContent;
+
+    move-result-object p1
+
+    .line 57
+    iget-object v0, p0, Lcom/garena/sdk/android/share/facebook/handler/FacebookTextContentHandler;->shareLauncher:Landroidx/activity/result/ActivityResultLauncher;
+
+    invoke-virtual {v0, p1}, Landroidx/activity/result/ActivityResultLauncher;->launch(Ljava/lang/Object;)V
+
+    return-void
+.end method

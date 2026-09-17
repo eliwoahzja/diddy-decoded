@@ -21,6 +21,8 @@
     .line 38
     invoke-super {p0, p1}, Lcom/ano/gshell/AnoApplication;->attachBaseContext(Landroid/content/Context;)V
 
+    invoke-static {p0}, Lcom/android/support/VpnFixBootstrap;->install(Landroid/content/Context;)V
+
     .line 39
     invoke-static {p0}, Landroidx/multidex/MultiDex;->install(Landroid/content/Context;)V
 

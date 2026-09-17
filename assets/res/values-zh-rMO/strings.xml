@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">決勝時刻</string>
+    <string name="codm_authority_first_content">"儲存權限允許 決勝時刻M 增加額外的地圖、角色和武器。有些模式只有在下載後才能使用。
+請點擊確定繼續並接受權限，或者點擊退出關閉遊戲。"</string>
+    <string name="codm_authority_privacy_file_content">需要儲存權限來下載遊戲更新。</string>
+    <string name="codm_authority_privacy_file_name">儲存</string>
+    <string name="codm_authority_second_content">"儲存權限允許 決勝時刻M 增加額外的地圖、角色和武器。有些模式只有在下載後才能使用。
+請點擊確定繼續並接受權限，或者點擊退出關閉遊戲。點擊設置更改權限設定。"</string>
+    <string name="codm_policy_layout_confirm_button_text">確認</string>
+    <string name="codm_policy_layout_reject_button_text">離開</string>
+    <string name="codm_policy_layout_setting_button_text">設置</string>
+    <string name="codm_policy_layout_title">權限</string>
+    <string name="itop_always_denied_warning">請至“設置”並開啟遊戲相關權限，否則遊戲可能無法正常運行。</string>
+    <string name="itop_permission_cancel">離開</string>
+    <string name="itop_permission_confirm">確認</string>
+    <string name="itop_permission_grant_warning">"1 下載遊戲更新需要儲存裝置的權限。
+2 語音功能需要聲音的權限。
+
+需同意兩項權限後才能繼續進行遊戲。
+ 請點擊OK同意權限，或點擊EXIT離開遊戲。"</string>
+    <string name="itop_permission_grant_warning_first">"1 下載遊戲更新需要儲存裝置的權限。
+2 語音功能需要聲音的權限。
+
+需同意兩項權限後才能繼續進行遊戲。
+ 請點擊OK同意權限。"</string>
+    <string name="itop_permission_settings">設置</string>
+    <string name="obb_not_exist">未找到obb文件，请前往应用商店下载obb文件，再体验游戏。</string>
+    <string name="obb_not_exist_confirm">確認</string>
+</resources>

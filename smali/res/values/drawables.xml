@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <drawable name="delete_bg">#413e3e</drawable>
+    <drawable name="notification_template_icon_bg">#3333b5e5</drawable>
+    <drawable name="notification_template_icon_low_bg">#0cffffff</drawable>
+    <drawable name="share_items_bg">#393939</drawable>
+    <drawable name="sheet_cancel_btn_click">#5c5858</drawable>
+    <drawable name="sheet_cancel_btn_normal">#4c4949</drawable>
+    <drawable name="transparent">#00000000</drawable>
+</resources>

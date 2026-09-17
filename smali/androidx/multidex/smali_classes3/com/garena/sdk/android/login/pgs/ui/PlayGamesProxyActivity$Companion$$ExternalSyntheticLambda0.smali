@@ -1,0 +1,30 @@
+.class public final synthetic Lcom/garena/sdk/android/login/pgs/ui/PlayGamesProxyActivity$Companion$$ExternalSyntheticLambda0;
+.super Ljava/lang/Object;
+.source "D8$$SyntheticClass"
+
+# interfaces
+.implements Landroidx/activity/result/ActivityResultCallback;
+
+
+# direct methods
+.method public synthetic constructor <init>()V
+    .locals 0
+
+    .line 0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onActivityResult(Ljava/lang/Object;)V
+    .locals 0
+
+    .line 0
+    check-cast p1, Landroidx/activity/result/ActivityResult;
+
+    invoke-static {p1}, Lcom/garena/sdk/android/login/pgs/ui/PlayGamesProxyActivity$Companion;->$r8$lambda$WWwEfBWNC5_yvb8g3PlwxHZtpDA(Landroidx/activity/result/ActivityResult;)V
+
+    return-void
+.end method

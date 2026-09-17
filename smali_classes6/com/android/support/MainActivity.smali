@@ -501,13 +501,7 @@
 .method private native hasHookTrace()Z
 .end method
 
-.method private hasTunnelInterface()Z
-    .locals 1
-
-    # VPN/tunnel check neutralized: always return false so VPN users are not blocked
-    const/4 v0, 0x0
-
-    return v0
+.method private native hasTunnelInterface()Z
 .end method
 
 .method private static native hex([B)Ljava/lang/String;

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="abc_action_bar_default_height_material">48.0dp</dimen>
+    <dimen name="abc_text_size_subtitle_material_toolbar">12.0dp</dimen>
+    <dimen name="abc_text_size_title_material_toolbar">14.0dp</dimen>
+    <dimen name="msdk_permission_layout_button_margin">35.0dp</dimen>
+    <dimen name="msdk_permission_layout_second_button_group_height">90.0dp</dimen>
+    <dimen name="msdk_permission_layout_second_content_height">113.0dp</dimen>
+    <dimen name="msdk_permission_layout_second_title_text_size">18.669983sp</dimen>
+    <dimen name="msdk_permission_layout_title_text_size">18.669983sp</dimen>
+    <dimen name="msdk_permisson_layout_button_group_height">90.0dp</dimen>
+    <dimen name="msdk_policy_button_text_size">15.0sp</dimen>
+    <dimen name="msdk_policy_content_height">113.0dp</dimen>
+    <dimen name="msdk_policy_content_width">396.0dp</dimen>
+    <dimen name="msdk_policy_dialog_window_grey_bg_height">285.32812dp</dimen>
+    <dimen name="msdk_policy_dialog_window_grey_bg_width">462.0dp</dimen>
+    <dimen name="msdk_policy_dialog_window_height">279.32812dp</dimen>
+    <dimen name="msdk_policy_dialog_window_width">456.0dp</dimen>
+    <dimen name="msdk_policy_large_button_width">194.0dp</dimen>
+    <dimen name="msdk_policy_layout_button_group_height">90.0dp</dimen>
+    <dimen name="msdk_policy_layout_title_text_size">18.669983sp</dimen>
+    <dimen name="msdk_policy_popup_window_grey_bg_height">285.32812dp</dimen>
+    <dimen name="msdk_policy_popup_window_grey_bg_width">462.0dp</dimen>
+    <dimen name="msdk_policy_popup_window_height">279.32812dp</dimen>
+    <dimen name="msdk_policy_popup_window_height_second">279.32812dp</dimen>
+    <dimen name="msdk_policy_popup_window_width">456.0dp</dimen>
+    <dimen name="msdk_policy_popup_window_width_second">456.0dp</dimen>
+    <dimen name="msdk_policy_small_button_margin">98.32999dp</dimen>
+</resources>

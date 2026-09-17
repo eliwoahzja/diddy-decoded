@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_gravity="center" android:background="@drawable/msdk_picker_corner" android:padding="16.0dp" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:paddingTop="6.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="0.0dp">
+        <TextView android:textSize="14.0sp" android:textColor="@color/picker_header_text_color" android:id="@id/picker_header_text" android:padding="5.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/topup" android:layout_marginStart="5.0dp" />
+        <FrameLayout android:id="@id/item_place_holder" android:layout_width="match_parent" android:layout_height="100.0dp">
+            <ProgressBar android:layout_gravity="center" android:id="@id/progress_view" android:layout_width="40.0dp" android:layout_height="40.0dp" />
+            <Button android:textColor="@android:color/white" android:layout_gravity="center" android:id="@id/retry_btn" android:background="@drawable/msdk_blue_btn" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/retry" android:textAllCaps="false" />
+        </FrameLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/picker_item_list" android:paddingBottom="6.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="0.0dp" />
+    </LinearLayout>
+</ScrollView>

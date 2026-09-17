@@ -1,0 +1,2 @@
+com.garena.sdk.android.payment.GooglePaymentMediator
+com.garena.sdk.android.payment.dummy.DummyPaymentMediator
