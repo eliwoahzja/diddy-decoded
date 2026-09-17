@@ -1,5 +1,0 @@
-com.garena.sdk.android.login.pgs.PlayGamesLoginComponent
-com.garena.sdk.android.login.facebook.FacebookLoginComponent
-com.garena.sdk.android.login.garena.GarenaLoginComponent
-com.garena.sdk.android.login.google.GoogleLoginComponent
-com.garena.sdk.android.login.guest.GuestLoginComponent
